@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import Items from "./components/Items";
+import { useMediaQuery } from "./misc/custom-hooks";
 
 function App() {
+  const isMobile = useMediaQuery("( max-width : 992px )");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ margin: isMobile ? "" : "5% 13% 2% 13%" }}>
+      <Header />
+      <Items />
     </div>
   );
 }
