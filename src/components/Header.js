@@ -3,32 +3,44 @@ import "../css/header.css";
 import Logo from "../images/logo.svg";
 import CartImg from "../images/icon-cart.svg";
 import AvatarImg from "../images/image-avatar.png";
-import { Navbar, Nav } from "rsuite";
 
 function Header() {
   return (
-    <div className="header-div">
-      <Navbar appearance="subtle">
-        <Navbar.Brand>
-          <img src={Logo} alt="logo" />
-        </Navbar.Brand>
-        <Nav>
-          <Nav.Item>Collections</Nav.Item>
-          <Nav.Item>Men</Nav.Item>
-          <Nav.Item>Women</Nav.Item>
-          <Nav.Item>About</Nav.Item>
-          <Nav.Item>Contact</Nav.Item>
-        </Nav>
-
-        <Nav pullRight>
-          <Nav.Item>
-            <img src={CartImg} alt="cart" />
-          </Nav.Item>
-          <Nav.Item>
-            <img src={AvatarImg} alt="avatar" height="40px" width="40px" />
-          </Nav.Item>
-        </Nav>
-      </Navbar>
+    <div className="header-nav-div">
+      <div className="nav-logo">
+        <img src={Logo} alt="logo" />
+      </div>
+      <div className="nav-left">
+        <a href="#collections" className="nav-link nav-link-grow-up">
+          Collections
+        </a>
+        <a href="#men" className="nav-link nav-link-grow-up">
+          Men
+        </a>
+        <a href="#women" className="nav-link nav-link-grow-up">
+          Women
+        </a>
+        <a href="#about" className="nav-link nav-link-grow-up">
+          About
+        </a>
+        <a href="#contact" className="nav-link nav-link-grow-up">
+          Contact
+        </a>
+      </div>
+      <div className="nav-right">
+        <div style={{ marginRight: "20px" }}>
+          <img
+            src={AvatarImg}
+            alt="avatar"
+            height="40px"
+            width="40px"
+            className="avatar-pic"
+          />
+        </div>
+        <div style={{ marginRight: "20px" }} className="cart-div">
+          <img src={CartImg} alt="cart" />
+        </div>
+      </div>
     </div>
   );
 }

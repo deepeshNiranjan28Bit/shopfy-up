@@ -1,3 +1,58 @@
-.header-div {
-  border-bottom: #000 1px;
+.header-nav-div {
+  display: flex;
+  border-bottom: 2px solid #bbbbbb;
+}
+.nav-logo {
+  flex: 2;
+}
+.nav-left {
+  flex: 4;
+  display: flex;
+  justify-content: space-evenly;
+}
+.nav-right {
+  flex: 3;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.nav-link {
+  text-decoration: none !important;
+  color: #313131;
+  padding-bottom: 30px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+}
+.nav-link:hover {
+  color: #000;
+  font-weight: 600;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: #f58840;
+}
+
+.nav-link-grow-up::before {
+  height: 0%;
+  width: 100%;
+  bottom: 0px;
+}
+
+.nav-link-grow-up:hover::before {
+  height: 5px;
+}
+
+.cart-div {
+  margin-right: 20px;
+  margin-top: 7px;
+}
+.avatar-pic {
+  border-radius: 50%;
+}
+.avatar-pic:hover {
+  outline: 3px solid #f58840;
 }

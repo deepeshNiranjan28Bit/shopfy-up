@@ -1,5 +1,5 @@
 import React from "react";
-import { FlexboxGrid, Tag } from "rsuite";
+import { FlexboxGrid, Tag, Col } from "rsuite";
 import "../css/items.css";
 import CartImg from "../images/icon-cart.svg";
 import Minus from "../images/icon-minus.svg";
@@ -14,7 +14,7 @@ function Items() {
   return (
     <div>
       <FlexboxGrid align="middle" justify="space-around">
-        <FlexboxGrid.Item colspan={10}>
+        <FlexboxGrid.Item as={Col} colspan={24} md={12}>
           <div style={{ textAlign: "center" }}>
             <img src={Image1} alt="" className="modal-img" />
             <FlexboxGrid justify="space-around">
@@ -33,7 +33,7 @@ function Items() {
             </FlexboxGrid>
           </div>
         </FlexboxGrid.Item>
-        <FlexboxGrid.Item colspan={10}>
+        <FlexboxGrid.Item as={Col} colspan={24} md={12}>
           <div>
             SNEAKER COMPANY
             <h2>Fall Limited Edition Sneakers</h2>
