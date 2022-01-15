@@ -1,0 +1,51 @@
+.menupop-div {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.9);
+  z-index: 10;
+}
+.menupop-close {
+  filter: grayscale(100%) brightness(99%);
+  -webkit-filter: grayscale(100%) brightness(99%);
+  -moz-filter: grayscale(100%) brightness(99%);
+}
+.menupop-content {
+  position: relative;
+  background-color: white;
+  padding: 20px 10vw;
+  width: 80%;
+  height: 100vh;
+  -webkit-animation-name: animateleft;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animateleft;
+  animation-duration: 0.4s;
+}
+.res-menu-pop {
+  font-size: large;
+  font-weight: 600;
+  margin-top: 4vh;
+  color: black;
+}
+@-webkit-keyframes animateleft {
+  from {
+    left: -300px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes animateleft {
+  from {
+    left: -300px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}

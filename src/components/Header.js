@@ -1,19 +1,27 @@
 import React from "react";
 import "../css/header.css";
-import { useMediaQuery } from "../misc/custom-hooks";
+import { useMediaQuery, useModalState } from "../misc/custom-hooks";
 import Logo from "../images/logo.svg";
 import CartImg from "../images/icon-cart.svg";
 import AvatarImg from "../images/image-avatar.png";
 import MenuImg from "../images/icon-menu.svg";
+import MenuPop from "./MenuPop";
 
 function Header() {
   const isMobile = useMediaQuery("( max-width : 700px )");
+  const { isOpen, close, open } = useModalState();
   return (
     <div className={isMobile ? "header-nav-div-res" : "header-nav-desk"}>
       {isMobile ? (
         <>
           <div className="menu-res-logo">
-            <img src={MenuImg} alt="menu" style={{ marginLeft: "20px" }} />
+            <img
+              src={MenuImg}
+              alt="menu"
+              style={{ marginLeft: "20px" }}
+              onClick={open}
+            />
+            {isOpen && <MenuPop close={() => close()} />}
 
             <img src={Logo} alt="logo" style={{ marginLeft: "20px" }} />
           </div>
