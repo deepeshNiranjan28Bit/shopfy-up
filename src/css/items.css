@@ -1,14 +1,25 @@
 .items-div {
-  margin-top: 7%;
+  margin-top: 5%;
+  margin-left: 0;
+}
+.items-div-res {
+  margin-top: 5%;
+}
+.content-div-res {
+  margin: 5% 3%;
 }
 .discount-div {
-  margin-left: 10px;
-  font-size: smaller;
+  margin-left: 5px;
+  font-size: small;
   padding: 1% 2%;
   color: #f58840;
   border-radius: 10px;
   text-align: center;
   background-color: #fef1e6;
+}
+.line-through-price-res {
+  display: inline-block;
+  margin-left: 50vw;
 }
 .counter-btn {
   -webkit-border-radius: 11;
@@ -18,7 +29,20 @@
   color: black;
   font-size: 20px;
   background: #f7f7f7;
-  padding: 5px 10px 5px 10px;
+  padding: 5px 15px 5px 15px;
+  text-decoration: none;
+}
+.counter-btn-res {
+  display: flex;
+  justify-content: space-between;
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  background: #f7f7f7;
+  padding: 10px 30px 10px 30px;
   text-decoration: none;
 }
 .addtocart-btn {
@@ -38,7 +62,11 @@
   background: #ffab4c;
   text-decoration: none;
 }
-
+.res-button {
+  margin-top: 2%;
+  width: 90vw;
+  font-size: x-large;
+}
 .thumbnailimg {
   width: 50px;
   height: 50px;
@@ -47,4 +75,8 @@
 .modal-img {
   height: 300px;
   border-radius: 7%;
+}
+.modal-img-res {
+  width: 100vw;
+  height: 300px;
 }

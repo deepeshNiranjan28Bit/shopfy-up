@@ -1,14 +1,27 @@
-.header-nav-div {
+.header-nav-div-res {
+  display: flex;
+  padding: 2% 0;
+}
+.header-nav-desk {
+  margin: 3% 0;
   display: flex;
   border-bottom: 2px solid #bbbbbb;
 }
 .nav-logo {
   flex: 2;
 }
+.menu-res-logo {
+  flex: 3;
+  margin: auto;
+}
 .nav-left {
   flex: 4;
   display: flex;
   justify-content: space-evenly;
+}
+.menu-res-cart {
+  flex: 2;
+  text-align: end;
 }
 .nav-right {
   flex: 3;
