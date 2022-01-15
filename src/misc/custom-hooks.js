@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 export const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(
@@ -17,3 +17,11 @@ export const useMediaQuery = (query) => {
 
   return matches;
 };
+
+export function useModalState(defaultValue = false) {
+  const [isOpen, setIsOpen] = useState(defaultValue);
+
+  const open = useCallback(() => setIsOpen(true), []);
+  const close = useCallback(() => setIsOpen(false), []);
+  return { isOpen, open, close };
+}

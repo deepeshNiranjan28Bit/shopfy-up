@@ -6,7 +6,10 @@ import { useMediaQuery } from "./misc/custom-hooks";
 function App() {
   const isMobile = useMediaQuery("( max-width : 992px )");
   return (
-    <div className="App" style={{ margin: isMobile ? "" : "3% 15% 2% 15%" }}>
+    <div
+      className="App"
+      style={{ margin: isMobile ? "" : "3% 15% 2% 15%", zIndex: "1" }}
+    >
       <Header />
       <Items />
     </div>
