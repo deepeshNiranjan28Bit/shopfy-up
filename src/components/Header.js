@@ -39,14 +39,20 @@ function Header({ countItem }) {
                 src={CartImg}
                 alt=""
                 style={{ marginRight: "20px" }}
-                onClick={openCart}
+                onClick={isOpenCart ? closeCart : openCart}
               />
-              <div className="indicator" style={{ right: isMobile && "18px" }}>
-                <div className="noti_cart">{countItem}</div>
-              </div>
 
               {isOpenCart && (
-                <CartPop close={() => closeCart()} count={countItem} />
+                <>
+                  <div
+                    className="indicator"
+                    style={{ right: isMobile && "18px" }}
+                  >
+                    <div className="noti_cart">{countItem}</div>
+                  </div>
+
+                  <CartPop close={() => closeCart()} count={countItem} />
+                </>
               )}
             </span>
             <img
@@ -93,12 +99,19 @@ function Header({ countItem }) {
               />
             </div>
             <div style={{ marginRight: "20px" }} className="cart-div base">
-              <img src={CartImg} alt="" onClick={openCart} />
-              <div className="indicator">
-                <div className="noti_cart">{countItem}</div>
-              </div>
+              <img
+                src={CartImg}
+                alt=""
+                onClick={isOpenCart ? closeCart : openCart}
+              />
+
               {isOpenCart && (
-                <CartPop close={() => closeCart()} count={countItem} />
+                <>
+                  <div className="indicator">
+                    <div className="noti_cart">{countItem}</div>
+                  </div>
+                  <CartPop close={() => closeCart()} count={countItem} />
+                </>
               )}
             </div>
           </div>
