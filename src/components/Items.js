@@ -13,18 +13,19 @@ import Image3Thumb from "../images/image-product-3-thumbnail.jpg";
 import Image4Thumb from "../images/image-product-4-thumbnail.jpg";
 import WindowPop from "./WindowPop";
 
-function Items() {
+function Items({ countItem, incrementFunc, decrementFunc }) {
   const isMobile = useMediaQuery("( max-width : 700px )");
   const { isOpen, close, open } = useModalState();
-  const [count, setCount] = useState(0);
-  function increment() {
-    setCount(count + 1);
-  }
-  function decrement() {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  }
+  // const [count, setCount] = useState(0);
+  // function increment() {
+  //   setCount(count + 1);
+  // }
+  // function decrement() {
+  //   if (count > 0) {
+  //     setCount(count - 1);
+  //   }
+  // }
+
   const [active, setActive] = useState(1);
   function activate(val) {
     setActive(val);
@@ -190,22 +191,20 @@ function Items() {
                 <img
                   src={Minus}
                   alt="Minus"
-                  onClick={() => decrement()}
+                  onClick={decrementFunc}
                   className="minus-counter"
                 />
               </span>
               {isMobile ? (
-                <span>{count}</span>
+                <span>{countItem}</span>
               ) : (
-                <span>&nbsp;&nbsp;&nbsp; {count} &nbsp;&nbsp;&nbsp;</span>
+                <span>&nbsp;&nbsp;&nbsp; {countItem} &nbsp;&nbsp;&nbsp;</span>
               )}
               <span>
                 <img
                   src={Plus}
                   alt="plus"
-                  onClick={() => {
-                    increment();
-                  }}
+                  onClick={incrementFunc}
                   className="plus-counter"
                 />
               </span>

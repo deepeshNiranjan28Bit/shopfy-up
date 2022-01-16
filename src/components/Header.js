@@ -12,7 +12,7 @@ import MenuImg from "../images/icon-menu.svg";
 import MenuPop from "./MenuPop";
 import CartPop from "./CartPop";
 
-function Header() {
+function Header({ countItem }) {
   const isMobile = useMediaQuery("( max-width : 700px )");
   const { isOpen, close, open } = useModalState();
   const { isOpenCart, closeCart, openCart } = useCartState();
@@ -42,10 +42,12 @@ function Header() {
                 onClick={openCart}
               />
               <div className="indicator" style={{ right: isMobile && "18px" }}>
-                <div className="noti_cart">0</div>
+                <div className="noti_cart">{countItem}</div>
               </div>
 
-              {isOpenCart && <CartPop close={() => closeCart()} />}
+              {isOpenCart && (
+                <CartPop close={() => closeCart()} count={countItem} />
+              )}
             </span>
             <img
               src={AvatarImg}
@@ -93,9 +95,11 @@ function Header() {
             <div style={{ marginRight: "20px" }} className="cart-div base">
               <img src={CartImg} alt="" onClick={openCart} />
               <div className="indicator">
-                <div className="noti_cart">0</div>
+                <div className="noti_cart">{countItem}</div>
               </div>
-              {isOpenCart && <CartPop close={() => closeCart()} />}
+              {isOpenCart && (
+                <CartPop close={() => closeCart()} count={countItem} />
+              )}
             </div>
           </div>
         </>

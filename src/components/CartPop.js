@@ -5,10 +5,10 @@ import Delete from "../images/icon-delete.svg";
 import { Grid, Row, Col } from "rsuite";
 import { useMediaQuery } from "../misc/custom-hooks";
 
-function CartPop({ close }) {
+function CartPop({ close, count }) {
   const isMobile = useMediaQuery("( max-width : 700px )");
-  const countPrice = 125 * 3;
 
+  const countPrice = 125 * count;
   return (
     <div className={isMobile ? "cart-pop-div-res" : "cart-pop-div-desk"}>
       <div className="cart-pop-content">
@@ -51,7 +51,7 @@ function CartPop({ close }) {
                 Fall Limited Editon {isMobile ? "... " : "Sneakers"}
               </p>
               <p style={{ marginTop: "0", marginLeft: isMobile && " 20px" }}>
-                $125 &times; 3
+                $125 &times; {count}
                 <span style={{ fontWeight: "700" }}>
                   &nbsp;&nbsp; ${countPrice}
                 </span>
