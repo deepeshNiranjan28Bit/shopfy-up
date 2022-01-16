@@ -187,7 +187,12 @@ function Items() {
               }
             >
               <span>
-                <img src={Minus} alt="Minus" onClick={() => decrement()} />
+                <img
+                  src={Minus}
+                  alt="Minus"
+                  onClick={() => decrement()}
+                  className="minus-counter"
+                />
               </span>
               {isMobile ? (
                 <span>{count}</span>
@@ -201,6 +206,7 @@ function Items() {
                   onClick={() => {
                     increment();
                   }}
+                  className="plus-counter"
                 />
               </span>
             </button>

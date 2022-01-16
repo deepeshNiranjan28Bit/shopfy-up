@@ -5,7 +5,7 @@
 .header-nav-desk {
   margin: 3% 0;
   display: flex;
-  border-bottom: 2px solid #bbbbbb;
+  border-bottom: 1.5px solid #bbbbbb;
 }
 .nav-logo {
   flex: 2;

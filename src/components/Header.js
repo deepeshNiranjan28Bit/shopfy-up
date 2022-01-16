@@ -1,15 +1,22 @@
 import React from "react";
 import "../css/header.css";
-import { useMediaQuery, useModalState } from "../misc/custom-hooks";
+import {
+  useMediaQuery,
+  useModalState,
+  useCartState,
+} from "../misc/custom-hooks";
 import Logo from "../images/logo.svg";
 import CartImg from "../images/icon-cart.svg";
 import AvatarImg from "../images/image-avatar.png";
 import MenuImg from "../images/icon-menu.svg";
 import MenuPop from "./MenuPop";
+import CartPop from "./CartPop";
 
 function Header() {
   const isMobile = useMediaQuery("( max-width : 700px )");
   const { isOpen, close, open } = useModalState();
+  const { isOpenCart, closeCart, openCart } = useCartState();
+
   return (
     <div className={isMobile ? "header-nav-div-res" : "header-nav-desk"}>
       {isMobile ? (
@@ -32,7 +39,9 @@ function Header() {
               alt="cart"
               style={{ marginRight: "20px" }}
               className="cart-div"
+              onClick={openCart}
             />
+            {isOpenCart && <CartPop close={() => closeCart()} />}
 
             <img
               src={AvatarImg}
@@ -78,7 +87,8 @@ function Header() {
               />
             </div>
             <div style={{ marginRight: "20px" }} className="cart-div">
-              <img src={CartImg} alt="cart" />
+              <img src={CartImg} alt="cart" onClick={openCart} />
+              {isOpenCart && <CartPop close={() => closeCart()} />}
             </div>
           </div>
         </>

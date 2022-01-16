@@ -25,3 +25,10 @@ export function useModalState(defaultValue = false) {
   const close = useCallback(() => setIsOpen(false), []);
   return { isOpen, open, close };
 }
+export function useCartState(defaultValue = false) {
+  const [isOpenCart, setIsOpen] = useState(defaultValue);
+
+  const openCart = useCallback(() => setIsOpen(true), []);
+  const closeCart = useCallback(() => setIsOpen(false), []);
+  return { isOpenCart, openCart, closeCart };
+}
