@@ -33,16 +33,20 @@ function Header() {
             <img src={Logo} alt="logo" style={{ marginLeft: "20px" }} />
           </div>
 
-          <div className="menu-res-cart">
-            <img
-              src={CartImg}
-              alt="cart"
-              style={{ marginRight: "20px" }}
-              className="cart-div"
-              onClick={openCart}
-            />
-            {isOpenCart && <CartPop close={() => closeCart()} />}
+          <div className="menu-res-cart base">
+            <span className="base">
+              <img
+                src={CartImg}
+                alt=""
+                style={{ marginRight: "20px" }}
+                onClick={openCart}
+              />
+              <div className="indicator" style={{ right: isMobile && "18px" }}>
+                <div className="noti_cart">0</div>
+              </div>
 
+              {isOpenCart && <CartPop close={() => closeCart()} />}
+            </span>
             <img
               src={AvatarImg}
               alt="avatar"
@@ -86,8 +90,11 @@ function Header() {
                 className="avatar-pic"
               />
             </div>
-            <div style={{ marginRight: "20px" }} className="cart-div">
-              <img src={CartImg} alt="cart" onClick={openCart} />
+            <div style={{ marginRight: "20px" }} className="cart-div base">
+              <img src={CartImg} alt="" onClick={openCart} />
+              <div className="indicator">
+                <div className="noti_cart">0</div>
+              </div>
               {isOpenCart && <CartPop close={() => closeCart()} />}
             </div>
           </div>
