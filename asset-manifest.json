@@ -1,8 +1,7 @@
 {
   "files": {
     "main.css": "/shopify-up/static/css/main.88c6ab67.css",
-    "main.js": "/shopify-up/static/js/main.001e646a.js",
-    "static/js/787.27987a99.chunk.js": "/shopify-up/static/js/787.27987a99.chunk.js",
+    "main.js": "/shopify-up/static/js/main.c2b6fe86.js",
     "static/media/image-product-2.jpg": "/shopify-up/static/media/image-product-2.c8bb0aaccecdebb16596.jpg",
     "static/media/image-product-1.jpg": "/shopify-up/static/media/image-product-1.520cc50bd13955f55cb2.jpg",
     "static/media/image-product-3.jpg": "/shopify-up/static/media/image-product-3.af5c71ba9ffcc0b8b54d.jpg",
@@ -19,11 +18,10 @@
     "static/media/icon-previous.svg": "/shopify-up/static/media/icon-previous.80616402c611cc0a6651d0b751da8a9b.svg",
     "static/media/icon-next.svg": "/shopify-up/static/media/icon-next.9621183a551a9985b4bd7536c9a69c66.svg",
     "main.88c6ab67.css.map": "/shopify-up/static/css/main.88c6ab67.css.map",
-    "main.001e646a.js.map": "/shopify-up/static/js/main.001e646a.js.map",
-    "787.27987a99.chunk.js.map": "/shopify-up/static/js/787.27987a99.chunk.js.map"
+    "main.c2b6fe86.js.map": "/shopify-up/static/js/main.c2b6fe86.js.map"
   },
   "entrypoints": [
     "static/css/main.88c6ab67.css",
-    "static/js/main.001e646a.js"
+    "static/js/main.c2b6fe86.js"
   ]
 }
