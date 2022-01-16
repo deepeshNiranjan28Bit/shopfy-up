@@ -1,10 +1,6 @@
 import React from "react";
 import "../css/header.css";
-import {
-  useMediaQuery,
-  useModalState,
-  useCartState,
-} from "../misc/custom-hooks";
+import { useMediaQuery, useModalState } from "../misc/custom-hooks";
 import Logo from "../images/logo.svg";
 import CartImg from "../images/icon-cart.svg";
 import AvatarImg from "../images/image-avatar.png";
@@ -12,10 +8,9 @@ import MenuImg from "../images/icon-menu.svg";
 import MenuPop from "./MenuPop";
 import CartPop from "./CartPop";
 
-function Header({ countItem }) {
+function Header({ countItem, count0, isOpenCart, closeCart, openCart }) {
   const isMobile = useMediaQuery("( max-width : 700px )");
   const { isOpen, close, open } = useModalState();
-  const { isOpenCart, closeCart, openCart } = useCartState();
 
   return (
     <div className={isMobile ? "header-nav-div-res" : "header-nav-desk"}>
@@ -39,7 +34,7 @@ function Header({ countItem }) {
                 src={CartImg}
                 alt=""
                 style={{ marginRight: "20px" }}
-                onClick={isOpenCart ? closeCart : openCart}
+                onClick={isOpenCart ? openCart : closeCart}
               />
 
               {isOpenCart && (
@@ -51,7 +46,11 @@ function Header({ countItem }) {
                     <div className="noti_cart">{countItem}</div>
                   </div>
 
-                  <CartPop close={() => closeCart()} count={countItem} />
+                  <CartPop
+                    close={() => closeCart()}
+                    count={countItem}
+                    count0={count0}
+                  />
                 </>
               )}
             </span>
@@ -110,7 +109,11 @@ function Header({ countItem }) {
                   <div className="indicator">
                     <div className="noti_cart">{countItem}</div>
                   </div>
-                  <CartPop close={() => closeCart()} count={countItem} />
+                  <CartPop
+                    close={() => closeCart()}
+                    count={countItem}
+                    count0={count0}
+                  />
                 </>
               )}
             </div>

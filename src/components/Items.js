@@ -13,18 +13,16 @@ import Image3Thumb from "../images/image-product-3-thumbnail.jpg";
 import Image4Thumb from "../images/image-product-4-thumbnail.jpg";
 import WindowPop from "./WindowPop";
 
-function Items({ countItem, incrementFunc, decrementFunc }) {
+function Items({
+  countItem,
+  incrementFunc,
+  decrementFunc,
+  isOpenCart,
+  openCart,
+  closeCart,
+}) {
   const isMobile = useMediaQuery("( max-width : 700px )");
   const { isOpen, close, open } = useModalState();
-  // const [count, setCount] = useState(0);
-  // function increment() {
-  //   setCount(count + 1);
-  // }
-  // function decrement() {
-  //   if (count > 0) {
-  //     setCount(count - 1);
-  //   }
-  // }
 
   const [active, setActive] = useState(1);
   function activate(val) {
@@ -214,6 +212,7 @@ function Items({ countItem, incrementFunc, decrementFunc }) {
               className={
                 isMobile ? "res-button addtocart-btn" : "addtocart-btn"
               }
+              onClick={isOpenCart ? closeCart : openCart}
             >
               <img src={CartImg} alt="cart" /> &nbsp; Add To Cart
             </button>

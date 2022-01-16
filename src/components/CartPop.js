@@ -5,7 +5,7 @@ import Delete from "../images/icon-delete.svg";
 import { Grid, Row, Col } from "rsuite";
 import { useMediaQuery } from "../misc/custom-hooks";
 
-function CartPop({ close, count }) {
+function CartPop({ close, count, count0 }) {
   const isMobile = useMediaQuery("( max-width : 700px )");
 
   const countPrice = 125 * count;
@@ -65,6 +65,7 @@ function CartPop({ close, count }) {
                 width={isMobile ? "20px" : "13px"}
                 height={isMobile ? "25px" : "15px"}
                 style={{ marginTop: "20px", marginRight: isMobile && "20%" }}
+                onClick={count0}
               />
             </Col>
           </Row>
